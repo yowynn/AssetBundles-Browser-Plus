@@ -2,7 +2,7 @@
 
 This tool enables the user to view and edit the configuration of asset bundles for their Unity project.  It will block editing that would create invalid bundles, and inform you of any issues with existing bundles.  It also provides basic build functionality.
 
-This tool is intended to replace the current workflow of selecting assets and setting their asset bundle manually in the inspector.  It can be dropped into any Unity project with a version of 5.6 or greater.  It will create a new menu item in <font color=#0050FF>*Window->AssetBundle Browser Plus*</font>.  
+This tool is intended to replace the current workflow of selecting assets and setting their asset bundle manually in the inspector.  It can be dropped into any Unity project with a version of 5.6 or greater.  It will create a new menu item in <font color=#0050FF>*Window->AssetBundle Browser Plus*</font>.
 
 # Unofficial Extension
 Added BuildMap to group different version assets <font color=#0050FF>(right-click to Create/AssetBundle Broswer Plus/Bundle Build Map Asset)</font>.
@@ -57,29 +57,29 @@ When enabled sync feature can sync asset data to other BuildMap <font color=#FF0
         Debug.Log($"Error in LoadAssetAtPath: {assetPath}");
         return;
     }
-	
+
     // output path
     string outputDirectory = Path.Combine(Application.dataPath, $"../AssetBundles/MyBundle");
-	
+
     // platform
     BuildTarget target = BuildTarget.StandaloneWindows;
-	
+
     // LZ4
     BuildAssetBundleOptions options = BuildAssetBundleOptions.ChunkBasedCompression;
-    
+
     // including extend options
     ExtendBuildAssetBundleOptions extdOptions = ExtendBuildAssetBundleOptions.None;
     extdOptions |= ExtendBuildAssetBundleOptions.WithoutManifest;
     // choose one [ReplaceByHash] or [Md5ForBundleName]
     // extdOptions |= ExtendBuildAssetBundleOptions.ReplaceByHash;
     // extdOptions |= ExtendBuildAssetBundleOptions.Md5ForBundleName
-	
+
     // rename manifest (if set it empty or null will not to do)
     string renameManifest = "myManifest";
-	
+
     // execute regular build
     BundleBuildMap.BuildAssetBundles(outputDirectory, bundleBuildMap.GetBuildMap(), options, target);
-	
+
     // execute extend build
     BundleBuildMap.BuildAssetBundles(outputDirectory, bundleBuildMap.GetBuildMap(), options, target, extdOptions, renameManifest);
 ```
@@ -118,3 +118,10 @@ openupm add com.michaelo.assetbundlebrowser.plus
 ## Full Documentation
 #### Official Released Features
 See [the official manual page](https://docs.unity3d.com/Manual/AssetBundles-Browser.html) or view the included [project manual page](Documentation/com.unity.assetbundlebrowser.md)
+
+
+
+
+
+
+hahaha test
